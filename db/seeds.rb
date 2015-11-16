@@ -7,7 +7,7 @@ groups = Group.create([
 Member.destroy_all
 members = Member.create([
 {name: "Matthew", image_url: "http://www.classicfilmjerks.com/wp-content/uploads/2013/11/600full-the-grapes-of-wrath-poster.jpg"},
-{title: "Siddhartha", image_url: "http://ecx.images-amazon.com/images/I/41drZBnWSzL._SY344_BO1,204,203,200_.jpg"}
+{name: "Siddhartha", image_url: "http://ecx.images-amazon.com/images/I/41drZBnWSzL._SY344_BO1,204,203,200_.jpg"}
 ])
 
 Membership.destroy_all

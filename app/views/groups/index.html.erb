@@ -1,0 +1,9 @@
+<h2>Groups <%= link_to "+", new_group_path %></h2>
+
+<div class="group">
+  <% @groups.each do |group| %>
+  <p> <%= link_to group.title, group_members_path(group) %> </p>
+  <%= link_to "Edit", edit_group_path(group) %>
+    <%= link_to "Delete", group_path(group), method: :delete %>
+  <% end %>
+</div>
