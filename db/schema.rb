@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151116162152) do
+ActiveRecord::Schema.define(version: 20151116175508) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,15 @@ ActiveRecord::Schema.define(version: 20151116162152) do
   add_index "memberships", ["group_id"], name: "index_memberships_on_group_id", using: :btree
   add_index "memberships", ["member_id"], name: "index_memberships_on_member_id", using: :btree
 
+  create_table "tasks", force: :cascade do |t|
+    t.string  "task"
+    t.string  "comment"
+    t.string  "due_by"
+    t.integer "membership_id"
+  end
+
+  add_index "tasks", ["membership_id"], name: "index_tasks_on_membership_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -62,4 +71,5 @@ ActiveRecord::Schema.define(version: 20151116162152) do
   add_foreign_key "members", "groups"
   add_foreign_key "memberships", "groups"
   add_foreign_key "memberships", "members"
+  add_foreign_key "tasks", "memberships"
 end
