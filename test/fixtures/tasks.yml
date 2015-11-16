@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  task: MyString
+  comment: MyString
+  due: MyString
+  member_id: 
+
+two:
+  task: MyString
+  comment: MyString
+  due: MyString
+  member_id: 
