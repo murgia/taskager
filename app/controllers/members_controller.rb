@@ -1,6 +1,7 @@
 class MembersController < ApplicationController
   def index
-    @members = Membership.find(params[:group_id])
+    @group = Group.find(params[:group_id])
+    @members = @group.members.all
   end
 
   private

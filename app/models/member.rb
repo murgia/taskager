@@ -1,3 +1,5 @@
 class Member < ActiveRecord::Base
-  belongs_to :group
+  has_many :memberships
+  has_many :groups, through: :memberships
+  has_many :tasks, through: :memberships
 end
