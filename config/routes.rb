@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root to: 'groups#index'
 
   resources :groups do
-    resources :members do
-      resources :tasks
-    end
+    resources :members
   end
+
+  resources :tasks, only: [:create, :update, :delete]
 end

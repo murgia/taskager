@@ -1,5 +1,12 @@
+<h2>Members <%= link_to "+", new_group_member_path %></h2>
+
 <div class= 'members'>
   <% @members.each do |member| %>
-    <%=member.name %>
+    <p><%=member.name %></p>
+    <%= link_to "Edit", edit_group_member_path(@group, member) %>
+    <%= link_to "Delete", group_member_path(@group, member), method: :delete %>
+    <% @tasks.each do |task| %>
+      <%=task.task%>
     <%end%>
+  <%end%>
 </div>
