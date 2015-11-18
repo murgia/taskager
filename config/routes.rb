@@ -6,5 +6,7 @@ Rails.application.routes.draw do
     resources :members
   end
 
-  resources :tasks, only: [:create, :update, :delete]
+  resources :memberships do
+    resources :tasks
+  end
 end

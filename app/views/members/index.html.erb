@@ -1,12 +1,15 @@
 <h2>Members <%= link_to "+", new_group_member_path %></h2>
 
 <div class= 'members'>
-  <% @members.each do |member| %>
-    <p><%=member.name %></p>
-    <%= link_to "Edit", edit_group_member_path(@group, member) %>
-    <%= link_to "Delete", group_member_path(@group, member), method: :delete %>
-    <% @tasks.each do |task| %>
-      <%=task.task%>
-    <%end%>
+  <% @memberships.each do |membership| %>
+    <p><%=membership.member.name %> <%= link_to "Edit", edit_group_member_path(@group, membership.member) %>
+      <%= link_to "Delete", group_member_path(@group, membership.member), method: :delete %></p>
+    <p>Tasks</p>
+    <div class='task_list'>
+      <ul><% membership.tasks.each do |task| %>
+        <li><%=task.task%> <%= link_to "+", new_membership_task_path(membership) %></li>
+          <%end%>
+      </ul>
   <%end%>
+    </div>
 </div>

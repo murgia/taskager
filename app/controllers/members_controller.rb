@@ -1,8 +1,7 @@
 class MembersController < ApplicationController
   def index
     @group = Group.find(params[:group_id])
-    @members = @group.members.all
-    @tasks = @group.tasks.all
+    @memberships = @group.memberships
   end
 
   def new
@@ -28,8 +27,12 @@ class MembersController < ApplicationController
   end
 
   def destroy
-    @group = Group.find(params[:group_id])
     @member = Member.find(params[:id])
+
+    @member.memberships.each do |membership|
+      membership.tasks.destroy_all
+      membership.destroy
+    end
     @member.destroy
     redirect_to group_members_path
   end
