@@ -1,0 +1,7 @@
+<%= form_for [@memberships, @task] do |f| %>
+  <%= f.label :task %>
+  <%= f.text_field :task %>
+  <%= f.label :due_by %>
+  <%= f.text_field :due_by %>
+  <%= f.submit %>
+<% end %>

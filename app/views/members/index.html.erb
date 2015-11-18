@@ -4,10 +4,10 @@
   <% @memberships.each do |membership| %>
     <p><%=membership.member.name %> <%= link_to "Edit", edit_group_member_path(@group, membership.member) %>
       <%= link_to "Delete", group_member_path(@group, membership.member), method: :delete %></p>
-    <p>Tasks</p>
+    <p>Tasks <%= link_to "+", new_membership_task_path(membership) %></p>
     <div class='task_list'>
       <ul><% membership.tasks.each do |task| %>
-        <li><%=task.task%> <%= link_to "+", new_membership_task_path(membership) %></li>
+        <li><%=task.task%></li>
           <%end%>
       </ul>
   <%end%>
