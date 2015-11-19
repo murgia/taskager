@@ -1,4 +1,7 @@
 class GroupsController < ApplicationController
+  # Could use a before filter to make dry
+  before_action :set_group, only: [:edit, :update, :destroy]
+
   def index
     @groups = Group.all
     @group = Group.new
@@ -10,24 +13,25 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    @group = Group.find(params[:id])
   end
 
   def update
-    @group = Group.find(params[:id])
     @group.update(group_params)
     redirect_to groups_path
   end
 
   def destroy
-      @group = Group.find(params[:id])
-      @group.destroy
-      redirect_to groups_path
+    @group.destroy
+    redirect_to groups_path
     end
 
   private
   def group_params
     params.require(:group).permit(:title, :photo_url)
+  end
+
+  def set_group
+    @group = Group.find(params[:id])
   end
 
 end
