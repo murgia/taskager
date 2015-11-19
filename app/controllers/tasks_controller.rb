@@ -13,13 +13,23 @@ class TasksController < ApplicationController
 
   def edit
     @memberships = Membership.find(params[:membership_id])
-    @task = @memberships.task.find(params(:id))
+    @task = Task.find(params[:id])
   end
 
   def update
+    task = Task.find(params[:id])
+    task.update(task_params)
+    memberships = Membership.find(params[:membership_id])
+    group = memberships.group
+    redirect_to group_members_path(group)
   end
 
   def destroy
+    task = Task.find(params[:id])
+    task.destroy
+    memberships = Membership.find(params[:membership_id])
+    group = memberships.group
+    redirect_to group_members_path(group)
   end
 
   private
