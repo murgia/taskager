@@ -13,6 +13,7 @@ class TasksController < ApplicationController
 
   def edit
     @memberships = Membership.find(params[:membership_id])
+    @group = @memberships.group
     @task = Task.find(params[:id])
   end
 

@@ -1,15 +1,70 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+html{
+  background: url(http://static.wixstatic.com/media/659b4d_7d615dbfc23d817a50b100f83d82739f.gif);
+  background-size: cover;
+  color: #333;
+}
+.members {
+  border:1px solid #ccc;
+  border-radius: 5px;
+  background: #fffacd;
+  width:300px;
+  margin:.5em auto .5em 2em;
+  padding:.5em;
+  display: inline-block;
+}
+
+body{
+  max-width:70em;
+  font-family:"Helvetica Neue", sans-serif;
+  padding:2em;
+  margin:2em auto 0em auto;
+}
+
+header{
+  border:1px solid #ccc;
+  border-radius: 5px;
+  background: #fffacd;
+  width:400px;
+  margin: .5em auto .5em auto;
+  padding:.5em;
+  text-align: center;
+}
+
+.member_heading {
+  border:1px solid #ccc;
+  border-radius: 5px;
+  background: #fffacd;
+  width:300px;
+  margin: .2em auto 3em auto;
+  text-align: center;
+}
+
+.new_edit{
+  border:1px solid #ccc;
+  border-radius: 5px;
+  background: #fffacd;
+  width:400px;
+  margin:.5em auto .5em auto;
+  padding:.5em;
+  text-align: center;
+}
+.group_heading {
+  border:1px solid #ccc;
+  border-radius: 5px;
+  background: #fffacd;
+  width:500px;
+  margin: .2em auto 3em auto;
+  text-align: center;
+  padding-bottom: 2em;
+}
+
+.groups{
+  border:1px solid #ccc;
+  border-radius: 5px;
+  background: #fffacd;
+  width:300px;
+  margin:.5em auto .5em 2em;
+  padding:.5em;
+  display: inline-block;
+  text-align: center;
+}

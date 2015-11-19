@@ -1,9 +1,14 @@
-<h2>Groups <%= link_to "+", new_group_path %></h2>
-
-<div class="group">
-  <% @groups.each do |group| %>
-  <p> <%= link_to group.title, group_members_path(group) %> </p>
-  <%= link_to "Edit", edit_group_path(group) %>
-    <%= link_to "Delete", group_path(group), method: :delete %>
-  <% end %>
+<div class = 'group_heading'>
+  <h2>Groups <%= link_to "+", new_group_path %></h2>
+  <p>Add Group</p>
+  <p><%= render 'form' %>
 </div>
+
+  <% @groups.each do |group| %>
+  <div class = 'groups'>
+    <p> <%= link_to group.title, group_members_path(group) %> </p>
+    <p> <%= link_to image_tag(group.photo_url, size: "150x150"), group_members_path(group) %></p>
+    <%= link_to "Edit", edit_group_path(group) %>
+      <%= link_to "Delete", group_path(group), method: :delete %>
+  </div>
+  <% end %>

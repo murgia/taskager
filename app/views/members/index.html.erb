@@ -1,21 +1,21 @@
-<h2>Members <%= link_to "+", new_group_member_path %></h2>
-
-<div class= 'members'>
+<div class='member_heading'>
+  <h2><%= @group.title %> Members</h2>
+  <p>Add Member</p>
+  <p><%= render 'form' %> <%= link_to "Return to Groups",       groups_path%></p>
+</div>
 
   <% @memberships.each do |membership| %>
+  <div class= 'members'>
     <p><%=membership.member.name %> <%= link_to "Edit", edit_group_member_path(@group, membership.member) %>
       <%= link_to "Delete", group_member_path(@group, membership.member), method: :delete %></p>
     <p>Tasks <%= link_to "+", new_membership_task_path(membership) %></p>
 
-    <div class='task_list'>
       <ul><% membership.tasks.each do |task| %>
-        <li><%=task.task%> <%= link_to "Edit", edit_membership_task_path(membership, task) %>
-
-<%= link_to "Delete", membership_task_path(membership, task), method: :delete %>
-        </li>
+        <div class='task_list'>
+          <li><%=task.task%> <%= link_to "Edit", edit_membership_task_path(membership, task) %> <%= link_to "Delete", membership_task_path(membership, task), method: :delete %>
+          </li>
+        </div>
           <%end%>
       </ul>
-  <%end%>
     </div>
-
-</div>
+      <%end%>

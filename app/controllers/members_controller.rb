@@ -2,11 +2,7 @@ class MembersController < ApplicationController
   def index
     @group = Group.find(params[:group_id])
     @memberships = @group.memberships
-  end
-
-  def new
     @member = Member.new
-    @group = Group.find(params[:group_id])
   end
 
   def create
