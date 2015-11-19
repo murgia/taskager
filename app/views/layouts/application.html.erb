@@ -7,14 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <% if current_user %>
-  <h3><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></h3>
-<% else %>
-  <h3><%= link_to 'Signup', new_user_registration_path %></h3>
-  <h3><%= link_to 'Login', new_user_session_path %></h3>
-<% end %>
 
-<%= yield %>
+<header class='header'>
+  <h1>Welcome to Taskager</h1>
+
+    <% if current_user %>
+      <%= link_to 'Signout', destroy_user_session_path, :method => :delete %>
+    <% else %>
+      <%= link_to 'Signup', new_user_registration_path %> <%= link_to 'Login', new_user_session_path %>
+    <% end %>
+</header>
+
+  <%= yield %>
 
 </body>
 </html>

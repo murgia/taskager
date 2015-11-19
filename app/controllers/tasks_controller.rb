@@ -12,6 +12,8 @@ class TasksController < ApplicationController
   end
 
   def edit
+    @memberships = Membership.find(params[:membership_id])
+    @task = @memberships.task
   end
 
   def update

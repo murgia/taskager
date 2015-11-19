@@ -7,7 +7,7 @@
     <p>Tasks <%= link_to "+", new_membership_task_path(membership) %></p>
     <div class='task_list'>
       <ul><% membership.tasks.each do |task| %>
-        <li><%=task.task%></li>
+        <li><%=task.task%> <%= link_to "Edit", edit_membership_task_path(@memberships, task) %></li>
           <%end%>
       </ul>
   <%end%>
