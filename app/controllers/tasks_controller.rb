@@ -2,6 +2,7 @@ class TasksController < ApplicationController
   def new
     @task = Task.new
     @memberships = Membership.find(params[:membership_id])
+    @group = @memberships.group
   end
 
   def create
