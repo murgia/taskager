@@ -1,13 +1,17 @@
 <div class = 'group_heading'>
   <h2>Groups</h2>
-  <p><%= render 'form' %>
+    <% if current_user %>
+      <p><%= render 'form' %>
+    <% end%>
 </div>
 
   <% @groups.each do |group| %>
   <div class = 'groups'>
     <h2> <%= link_to group.title, group_members_path(group) %> </h2>
     <p> <%= link_to image_tag(group.photo_url, size: "150x150"), group_members_path(group) %></p>
-    <%= link_to "Edit", edit_group_path(group) %>
-      <%= link_to "Delete", group_path(group), method: :delete %>
+      <% if current_user %>
+        <%= link_to "Edit", edit_group_path(group) %>
+        <%= link_to "Delete", group_path(group), method: :delete %>
+      <% end%>
   </div>
   <% end %>

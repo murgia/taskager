@@ -10,6 +10,11 @@
 
 <header class='header'>
   <h1>Welcome to Taskager</h1>
+  <% if current_user %>
+    <p></p>
+  <% else %>
+    <p>Please sign in to edit and create</p>
+  <% end%>
     <%= link_to 'Home', groups_path %>
     <% if current_user %>
       <%= link_to 'Signout', destroy_user_session_path, :method => :delete %>

@@ -18,6 +18,6 @@ memberships = Membership.create([
 
 Task.destroy_all
 tasks = Task.create([
-  {task: "Project 1", comment: "finish the controllers for groups", due_by:"November 12", membership_id:1},
-  {task: "Vacuum", comment: "make sure you get every room", due_by:"November 18", membership_id:2}
+  {task: "Finish group controllers", comment: "finish the controllers for groups", due_by:"November 15", membership_id:1},
+  {task: "Preach love and happiness", comment: "make sure you get every room", due_by:"Always", membership_id:2}
   ])
