@@ -3,6 +3,7 @@ class MembersController < ApplicationController
     @group = Group.find(params[:group_id])
     @memberships = @group.memberships
     @member = Member.new
+    @task = Task.new
   end
 
   def create

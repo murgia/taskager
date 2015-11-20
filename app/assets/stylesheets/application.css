@@ -2,12 +2,14 @@ html{
   background: url(http://static.wixstatic.com/media/659b4d_7d615dbfc23d817a50b100f83d82739f.gif);
   background-size: cover;
   color: #333;
+  padding-bottom: 5em;
+  padding-top: 2em;
 }
 .members {
   border:1px solid #ccc;
   border-radius: 5px;
   background: #fffacd;
-  width:300px;
+  width:500px;
   margin:.5em auto .5em 2em;
   padding:.5em;
   display: inline-block;
@@ -15,9 +17,23 @@ html{
 
 body{
   max-width:70em;
-  font-family:"Helvetica Neue", sans-serif;
+  /*font-family:"Helvetica Neue", sans-serif;*/
   padding:2em;
   margin:2em auto 0em auto;
+  font-family: Georgia;
+  letter-spacing: 0.1em;
+  color: rgb(142,11,0);
+  text-shadow: 1px 1px 1px rgba(255,255,255,0.6);
+}
+
+a:link {
+  color: #0055bb;
+}
+a:visited {
+  color: #0055bb;
+}
+a:hover {
+  color: tomato;
 }
 
 header{
@@ -28,6 +44,18 @@ header{
   margin: .5em auto .5em auto;
   padding:.5em;
   text-align: center;
+  text-shadow: 0 1px 0 #ccc,
+             0 2px 0 #c9c9c9,
+             0 3px 0 #bbb,
+             0 4px 0 #b9b9b9,
+             0 5px 0 #aaa,
+             0 6px 1px rgba(0,0,0,.1),
+             0 0 5px rgba(0,0,0,.1),
+             0 1px 3px rgba(0,0,0,.3),
+             0 3px 5px rgba(0,0,0,.2),
+             0 5px 10px rgba(0,0,0,.25),
+             0 10px 10px rgba(0,0,0,.2),
+             0 20px 20px rgba(0,0,0,.15);
 }
 
 .member_heading {
@@ -67,4 +95,12 @@ header{
   padding:.5em;
   display: inline-block;
   text-align: center;
+}
+
+.member_title{
+  text-align: center;
+}
+.member_links{
+  text-align: center;
+  margin-top: -1.5em
 }
