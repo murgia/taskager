@@ -1,3 +1,4 @@
+# yay seed data!
 Group.destroy_all
 groups = Group.create([
   {title:"GADC-WDI", photo_url: "https://avatars0.githubusercontent.com/u/6361298?v=3&s=200"},

@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  # this looks great
   def index
     @groups = Group.all
     @group = Group.new

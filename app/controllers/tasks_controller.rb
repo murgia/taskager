@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  # :+1:
   def new
     @task = Task.new
     @memberships = Membership.find(params[:membership_id])
