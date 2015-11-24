@@ -8,6 +8,7 @@ class MembersController < ApplicationController
 
   def create
     @group = Group.find(params[:group_id])
+    # I didn't know you could do this. Does this create a row in the memberships table then?
     @member = @group.members.create(member_params)
     redirect_to group_members_path(@group)
   end
@@ -25,7 +26,7 @@ class MembersController < ApplicationController
 
   def destroy
     @member = Member.find(params[:id])
-
+# yeah i'm still not sure why dependent destroys make it error when you destroy just the member.
     @member.memberships.each do |membership|
       membership.tasks.destroy_all
       membership.destroy

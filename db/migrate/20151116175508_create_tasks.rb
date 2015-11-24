@@ -1,4 +1,5 @@
 class CreateTasks < ActiveRecord::Migration
+  ## migrations looks good
   def change
     create_table :tasks do |t|
       t.string :task
